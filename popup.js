@@ -1,8 +1,5 @@
-
 function init() {
     const audioCtx = new AudioContext();
-
-
     const I = document.getElementById('I');
     const II = document.getElementById('II');
     const III = document.getElementById('III');
@@ -11,21 +8,15 @@ function init() {
 
     const soundList = [{
         source: "./sounds/ting.wav",
-        name: I
+        name: I,
+        label: "Ting"
     },
-        {name: II, source: "./sounds/cash.wav"},
-        {name: III, source: "./sounds/Crowd.wav"},
-        {name: VI, source: "./sounds/crowd_Applause.wav"}
+
+        {name: II, source: "./sounds/cash.wav", label: "Cash"},
+        {name: III, source: "./sounds/Crowd.wav", label: "Crowd"},
+        {name: VI, source: "./sounds/crowd_Applause.wav", label: "Applause"}
     ]
     let audioList = []
-//
-// I.addEventListener('click',()=>{
-//     const audio = new Audio("./sounds/ting.wav");
-//     const source = audioCtx.createMediaElementSource(audio);
-//     source.connect(audioCtx.destination);
-//     audio.play();
-//
-// })
 
     soundList.forEach(sound => {
         sound.name.addEventListener('click', () => {
@@ -36,13 +27,11 @@ function init() {
             audioList.push(audio)
             audio.play();
         })
+        sound.name.innerText = sound.label
     });
 
-    stopButton.addEventListener('click',()=>{
-        // audioCtx.close()
-        //  init()
-        // console.log(audioList)
-        audioList.forEach(sound=>sound.volume=0)
+    stopButton.addEventListener('click', () => {
+        audioList.forEach(sound => sound.volume = 0)
 
     })
 }

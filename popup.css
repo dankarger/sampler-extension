@@ -4,16 +4,51 @@ body {
     background : linear-gradient(90deg, rgb(22, 55, 87) 0%, rgb(43, 43, 43) 100%);
     border-radius : 0 0 6px 6px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(32, 92, 124, 0.19);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
 }
 
+.main {
+    border: 2px #40405e solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap:1rem;
+    width:95%;
+    height:98%;
+}
 h1 {
     color:white;
     text-shadow: 1px 1px black;
 }
+
 button {
     box-shadow: rgba(115, 103, 103, 0.35) 0px 5px 15px;
+    /*min-width:250px;*/
+    max-width: 190px;
+    width:100%;
+    background-color: #9494ee;
+    height:50px;
+    color: #becbe7;
+    text-shadow: 2px 2px black;
+    border-top: 2px solid darkblue;
+    border-left: 2px solid darkblue;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size:2rem;
+
+}
+
+.buttons {
+    width:100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap:5px;
+    flex: 2;
+}
+
+#stop {
+
+
 }
