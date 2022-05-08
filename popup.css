@@ -7,15 +7,15 @@ body {
 
 }
 
-.main {
+#main {
     border: 2px #40405e solid;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: start;
     gap:1rem;
-    width:95%;
-    height:98%;
+    width:100%;
+    height:100%;
 }
 h1 {
     color:white;
@@ -36,6 +36,7 @@ button {
     border-radius: 10px;
     font-weight: bold;
     font-size:2rem;
+    filter: none;
 
 }
 
@@ -46,9 +47,24 @@ button {
     align-items: center;
     gap:5px;
     flex: 2;
+
 }
 
 #stop {
 
 
+}
+
+.animate {
+    animation: animation-start 800ms ease-in-out forwards;
+}
+
+@keyframes animation-start {
+    from{
+        background-color: inherit;
+    }
+    to{
+        background-color : rgba(222, 91, 91, 0.38);
+        filter:brightness(170%);
+    }
 }

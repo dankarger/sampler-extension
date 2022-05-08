@@ -6,11 +6,11 @@
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["storage"],
+  "permissions": ["storage", "downloads"],
   "action": {
     "default_popup": "popup.html"
   },
-
+  "content_security_policy": "unsafe-inline script-src 'self' https://example.com; object-src 'self'",
   "icons": {
     "16": "/images/get_started16.png",
     "32": "/images/get_started32.png",
