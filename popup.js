@@ -7,9 +7,9 @@ const mainDiv = document.getElementById('main')
 function init() {
     const audioCtx = new AudioContext();
     const analyzerNode = new AnalyserNode(audioCtx, {fftSize: 256})
-    const gainNode = new GainNode(audioCtx, {gain: 1})
-    gainNode.connect(audioCtx.destination);
-    analyzerNode.connect(gainNode)
+    // const gainNode = new GainNode(audioCtx, {gain: 1})
+    // gainNode.connect(audioCtx.destination);
+    // analyzerNode.connect(gainNode)
     const I = document.getElementById('I');
     const II = document.getElementById('II');
     const III = document.getElementById('III');
@@ -36,7 +36,7 @@ function init() {
             source.connect(analyzerNode)
             source.connect(audioCtx.destination);
             audioList.push(source)
-            console.log(audio.duration)
+            // console.log(audio.duration)
             let sampleDuration
             audio.addEventListener('loadedmetadata', function(){
                 // Obtain the duration in seconds of the audio file (with milliseconds as well, a float value)
@@ -61,9 +61,12 @@ function init() {
     });
 
     stopButton.addEventListener('click', () => {
-        audioList.forEach(sound => sound.volume = 0)
+        audioList.forEach(sound => sound.volume = 0);
+        audioCtx.suspend()
+        stopAnimate()
 
     })
+
     function drawVisualizer () {
         requestAnimationFrame(drawVisualizer)
 
@@ -98,6 +101,6 @@ function animateBackground(timeout) {
    },timeout)
 }
 function stopAnimate() {
-    mainDiv.classList.toggle('animate');
+    mainDiv.classList.remove('animate');
 
 }
