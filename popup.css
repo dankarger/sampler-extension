@@ -6,7 +6,15 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(32, 92, 124, 0.19);
 
 }
-
+canvas {
+    position: absolute;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    z-index: 221;
+    pointer-events: none;
+}
 #main {
     border: 2px #40405e solid;
     display: flex;
@@ -25,7 +33,7 @@ h1 {
 button {
     box-shadow: rgba(115, 103, 103, 0.35) 0px 5px 15px;
     /*min-width:250px;*/
-    max-width: 190px;
+    max-width: 160px;
     width:100%;
     background-color: #9494ee;
     height:50px;
@@ -35,7 +43,7 @@ button {
     border-left: 2px solid darkblue;
     border-radius: 10px;
     font-weight: bold;
-    font-size:2rem;
+    font-size:1.5rem;
     filter: none;
 
 }
