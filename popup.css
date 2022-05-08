@@ -12,7 +12,7 @@ canvas {
     left:0;
     width:100vw;
     height:100vh;
-    z-index: 221;
+    z-index: -1;
     pointer-events: none;
 }
 #main {
@@ -45,6 +45,9 @@ button {
     font-weight: bold;
     font-size:1.5rem;
     filter: none;
+    z-index: 2000;
+    position: relative;
+
 
 }
 
@@ -55,7 +58,9 @@ button {
     align-items: center;
     gap:5px;
     flex: 2;
-
+    z-index: 2000;
+    position: relative;
+    background-color: transparent;
 }
 
 #stop {
